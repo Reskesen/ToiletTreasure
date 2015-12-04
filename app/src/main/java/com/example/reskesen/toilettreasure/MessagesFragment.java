@@ -5,8 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
@@ -65,8 +63,6 @@ public class MessagesFragment extends android.support.v4.app.Fragment implements
         // super.onCreate(savedInstanceState);
         list = (ListView) root.findViewById(R.id.list);
         list.setOnItemClickListener(this);
-        list.setDivider(new ColorDrawable(Color.rgb(0, 197, 0)));
-        list.setDividerHeight(5);
 
 
 
@@ -167,10 +163,6 @@ public class MessagesFragment extends android.support.v4.app.Fragment implements
                             TextView username = (TextView) view.findViewById(R.id.user_name);
                             username.setText( messages.get(position).getUsername());
                             ImageView billede = (ImageView) view.findViewById(R.id.message_image);
-
-                            TextView text = (TextView) view.findViewById(R.id.message_text);
-                            text.setText(messages.get(position).getMessage());
-
 
 
                             billede.setImageResource(getImage(messages.get(position).getSpiritanimal()));//R.drawable.smiley);
